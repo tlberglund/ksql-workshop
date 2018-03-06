@@ -8,7 +8,7 @@ Instructions for a brief KSQL hands-on workshop. Assume Linux or Mac. If using W
   
   * `cd ksql`
   
-  * `git checkout v0.4`
+  * `git checkout v0.5`
   
   * `mvn clean compile install -DskipTests`
   
@@ -34,8 +34,11 @@ Instructions for a brief KSQL hands-on workshop. Assume Linux or Mac. If using W
 port = 9092
 advertised.host.name = localhost
 ```
+5. Start the Confluent Platform
 
-5. Calculate average movie ratings using JSON
+  * Type `confulent start` at any old terminal
+
+6. Calculate average movie ratings using JSON
 
   * Load `data/movies-json.js` into a topic called `movies-raw` with `kafka-console-producer --broker-list localhost:9092 --topic movies_raw`
   * `CREATE STREAM movies-raw  ... (VALUE_FORMAT='JSON', KAFKA_TOPIC='movies-raw')`
